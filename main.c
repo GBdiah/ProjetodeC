@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+//me da acesso pra dar commit
 int x1,x2,y1,y2;
 typedef enum{TRUE,FALSE} boolean;
 int fim_do_jogo = FALSE;
@@ -27,7 +27,7 @@ int map[6][6] = {
         {2,2,2,2,2,2}
     };
 
-int verifica(int x1, int y1,int x2,int y2,int map[][6]){//ESSA FUN«√O VAI VERIFICAR SE OS PONTOS ESCOLHIDOS S√O PASSIVES DE
+int verifica(int x1, int y1,int x2,int y2,int map[][6]){//ESSA FUN√á√ÉO VAI VERIFICAR SE OS PONTOS ESCOLHIDOS S√ÉO PASSIVES DE
 //DE LIGAMENTO.
         int ponto1 = map[x1][y1];
         int ponto2 = map[x2][y2];
@@ -37,10 +37,10 @@ int verifica(int x1, int y1,int x2,int y2,int map[][6]){//ESSA FUN«√O VAI VERIFI
                 return 1;//RETORNA 1 SE FOREM
         }
         else{
-            return 0;//RETORNA 0 SE N√O
+            return 0;//RETORNA 0 SE N√ÉO
         }
 }
-int Wjogador(int jogador,int x1,int y1,int x2,int y2,jogadores *player1,jogadores *player2){//ESSA FUN«√O VAI DETERMINAR SE QUEM VAI PROSSEGUIR NO JOGO … O JOGADOR 1 OU O 2
+int Wjogador(int jogador,int x1,int y1,int x2,int y2,jogadores *player1,jogadores *player2){//ESSA FUN√á√ÉO VAI DETERMINAR SE QUEM VAI PROSSEGUIR NO JOGO √â O JOGADOR 1 OU O 2
             int continua = quadrante(x1,y1,x2,y2,jogador,&player1,&player2);
             if (jogador == 1){
                 if (continua == 1){
@@ -61,7 +61,7 @@ int Wjogador(int jogador,int x1,int y1,int x2,int y2,jogadores *player1,jogadore
             return jogador;
 }
 }
-//VAI VERIFICAR NO QUADRANTE SE ELE FECHOU O QUADRANTE. PS: N√O TOQUE NELA ANIMAL.
+//VAI VERIFICAR NO QUADRANTE SE ELE FECHOU O QUADRANTE. PS: N√ÉO TOQUE NELA ANIMAL.
 int quadrante(int x1, int y1,int x2,int y2,int map[][6],int jogador,jogadores *player1,jogadores *player2){
     if(map[x1][y1] == 1 && map[x2][y2] == 1 && map[x1+6][y1+6] == 1 && map[x2+6][y2+6] == 1){
         if (jogador == 1){
@@ -103,16 +103,16 @@ int main()
         printf("----------------------------");
         printf("Jogador %d",jogador);
         printf("----------------------------\n\n");
-        printf("PosiÁ„o do TraÁo, ponto 1(x,y): ");scanf("%d%d",&x1, &y1);
+        printf("Posi√ß√£o do Tra√ßo, ponto 1(x,y): ");scanf("%d%d",&x1, &y1);
         printf("Ponto 2(x,y): ");scanf("%d%d",&x2, &y2);
-        resultado = verificar(x1,y1,x2,y2, map);//CHAMA A FUN«√O QUE VERIFICA SE A LIGA«√O DE PONTOS … POSSIVEL
+        resultado = verificar(x1,y1,x2,y2, map);//CHAMA A FUN√á√ÉO QUE VERIFICA SE A LIGA√á√ÉO DE PONTOS √â POSSIVEL
         if (resultado == 1){//SE FOR POSSIVEL ELE ADICIONA CHAMA...
-                Wjogador(jogador,x1,y1,x2,y2,&player1,&player2);//...A FUN«√O SEM RETORNO Wjogador QUE POR SUA VEZ VERIFICA SE ELE COMPLETOU O QUADRANTE DAQUELE PONTO
-                           // SE O QUADRANTE ESTIVER COMPLETO O JOGADOR CONTINUAR¡ NA VEZ DELE E ADICIONAR¡ +1PONTO NO JOGADOR DA
+                Wjogador(jogador,x1,y1,x2,y2,&player1,&player2);//...A FUN√á√ÉO SEM RETORNO Wjogador QUE POR SUA VEZ VERIFICA SE ELE COMPLETOU O QUADRANTE DAQUELE PONTO
+                           // SE O QUADRANTE ESTIVER COMPLETO O JOGADOR CONTINUAR√Å NA VEZ DELE E ADICIONAR√Å +1PONTO NO JOGADOR DA
                            //VEZ.
             }
-        else{//SE N√O, ELE PEDE OUTRA VEZ QUE ELE DECLARE OS PONTOS
-            printf("Digite outros ponto, ligaÁ„o invalida, observe o atentamente o diagrama");
+        else{//SE N√ÉO, ELE PEDE OUTRA VEZ QUE ELE DECLARE OS PONTOS
+            printf("Digite outros ponto, liga√ß√£o invalida, observe o atentamente o diagrama");
         }
 
     getchar();
